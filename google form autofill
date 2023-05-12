@@ -1,0 +1,71 @@
+import openpyxl
+from selenium import webdriver
+from selenium.webdriver.common.by import By
+from selenium.webdriver.common.keys import Keys
+import time
+from selenium.webdriver.support.ui import Select
+import requests
+from bs4 import BeautifulSoup
+import gdown
+import pyautogui
+import split
+
+options = webdriver.ChromeOptions()
+options.add_experimental_option("detach", True)
+num_times = int(input("How many times do you want to send the message? "))
+
+#setting path of chrome driver
+webdriver_path = 'filepath'
+
+#new instance of a Chrome driver
+driver = webdriver.Chrome(options=options)
+
+#opening the website
+
+def submit():
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("space")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("tab")
+    pyautogui.press("space")
+    pyautogui.press("tab")
+    pyautogui.press("enter")
+
+#Question 1
+for i in range(num_times): 
+    #start_time = time.time() 
+    driver.get('https://docs.google.com/forms/d/e/1FAIpQLScqDZc-TwLpE0WoCkv0J6Y7IMRFjZsDp3IqggDtyCgOXVLl4w/viewform')
+    submit()
+    #end_time = time.time()
+    #elapsed_time = end_time - start_time
+    #print(f"Elapsed time: {elapsed_time:.5f} seconds")
+    print("Google Form Successfully Submitted")
+    
+    
+
+
+
+
+                                            
+
+
+
+
+"""
+button = driver.find_element(By.XPATH, '/html/body/div/div[3]/form/div[2]/div/div[2]/div[1]/div/div/div[2]/div[1]/div[1]/label')
+button.click()
+button.click()
+
+buttonn1 = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[2]/div/div[2]/div[2]/div/div/div[2]/div/div/span/div/div[1]/label')
+buttonn1.click()
+buttonn1.click()
+
+submitbutton = driver.find_element(By.XPATH, '/html/body/div/div[2]/form/div[2]/div/div[3]/div/div[1]/div/span')
+submitbutton.click()
+submitbutton.click()
+"""
